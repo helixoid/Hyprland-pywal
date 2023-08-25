@@ -1,0 +1,152 @@
+@import 'colors-waybar.css';
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 15px;
+	min-height: 0;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+} 
+
+#window {
+	margin-top: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: transparent;
+	background: transparent;
+}
+
+window#waybar.termite #window,
+window#waybar.Firefox #window,
+window#waybar.Navigator #window,
+window#waybar.PCSX2 #window {
+	color: #4d4d4d;
+	background: #e6e6e6;
+}
+
+tooltip {
+	background: #1e1e2e;
+	border-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #11111b;
+}
+
+#workspaces {
+	margin-top: 8px;
+	margin-bottom: 0px;
+	border-radius: 26px;
+	transition: none;
+	background: @background;
+}
+
+#workspaces button {
+	font-size: 16px;
+	transition: none;
+	color: @color1;
+	background: transparent;
+}
+
+#workspaces button.active { 
+	color: @foreground;
+}
+
+#workspaces button:hover { 
+	box-shadow: inherit;
+	text-shadow: inherit;
+	transition: none;
+	color: @color2;
+}
+
+#clock { 
+	margin-top: 8px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @color3;
+	background: @background;
+}
+
+#custom-swww { 
+	margin-top: 8px;
+	margin-bottom: 0px;
+	margin-left: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @color3;
+	background: @background;
+} 
+
+#tray {
+	margin-top: 8px;
+	margin-bottom: 0px;
+	margin-right: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @color3;
+	background: @background;
+}
+
+#network {
+	margin-top: 8px;
+	margin-bottom: 0px;
+	padding-left: 16px;
+	padding-right: 0px;
+	border-radius: 26px 0px 0px 26px;
+	transition: none;
+	color: @color4;
+	background: @background;
+}
+
+#cpu {
+	margin-top: 8px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-left: 16px;
+	padding-right: 0px;
+	border-radius: 0px;
+	transition: none;
+	color: @color5;
+	background: @background;
+}
+
+#backlight {
+	margin-top: 8px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-left: 16px;
+	padding-right: 0px;
+	border-radius: 0px;
+	transition: none;
+	color: @color7;
+	background: @background;
+}
+
+#pulseaudio {
+	margin-top: 8px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 10px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 0px 26px 26px 0px;
+	transition: none;
+	color: @color8;
+	background: @background;
+}

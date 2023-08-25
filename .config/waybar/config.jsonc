@@ -1,0 +1,84 @@
+{
+	"layer": "top",
+	"position": "top",
+	"mod": "dock",
+	"exclusive": true,
+	"passthrough": false,
+	"gtk-layer-shell": true,
+	"modules-left": ["clock", "custom/swww"],
+	"modules-center": ["wlr/workspaces"],
+	"modules-right": ["tray", "network", "cpu", "backlight", "pulseaudio"],
+
+	"wlr/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"sort-by-number": true,
+		"on-click": "activate",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+		}
+	},
+
+	"clock": {
+		"format": "{:󰥔 %I:%M %p    %a, %b %e}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+	
+    "custom/swww": {
+    	"tooltip": false,
+    	"on-click": "$HOME/.config/waybar/scripts/wallpaper.sh",
+    	"format": " "
+    },
+
+    "tray": {
+		"tooltip": false,
+		"icon-size": 18,
+		"spacing": 10
+	},		
+
+	"network": {
+		"tooltip": true,
+		"format-wifi": "󰖩 {essid}",
+		"format-ethernet": "󰈀 {ipaddr}",
+		"tooltip-format": "󰩠 {ipaddr} | 󰇚 {bandwidthDownBits} | 󰕒 {bandwidthUpBits}",
+		"interval": 3
+	},
+
+	"cpu": {
+		"tooltip": false,
+		"format": " {usage}%",
+		"interval": 3
+	},
+
+	"backlight": {
+		"tooltip": false,
+		"format": "{icon} {percent}%",
+		"format-icons": ["󰃞", "󰃟", "󰃠"]
+	},
+
+    "pulseaudio": {
+    	"tooltip": false,
+    	"on-click": "pavucontrol",
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟",
+		"format-icons": {
+			"headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+	}
+}

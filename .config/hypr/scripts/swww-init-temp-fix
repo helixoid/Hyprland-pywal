@@ -1,0 +1,7 @@
+#!/bin/bash
+
+monitor=$(hyprctl -j monitors | jq -r .[].name)
+cWALLPATH="$HOME/.cache/swww/$monitor"
+LASTWALLPATH=$(cat $cWALLPATH)
+
+swww img "$LASTWALLPATH" 

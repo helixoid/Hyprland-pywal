@@ -1,0 +1,30 @@
+#!/bin/bash
+
+swww init
+
+if [ -e "${HOME}/.cache/wal/colors" ]; then
+    wal -R
+
+    echo "Cached colors exist. Using existing colors."
+else
+    DIR=$HOME/Pictures/Walls
+    PICS=($(ls ${DIR}))
+
+    RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
+
+    swww img ${DIR}/${RANDOMPICS} --resize fit --transition-fps 60 --transition-type grow --transition-pos "$(hyprctl cursorpos)" --invert-y --transition-duration 2
+    wal -i ${DIR}/${RANDOMPICS}
+
+    echo "Successfully set a new wallpaper and generated colors from it."
+fi
+
+#pywalfox update
+#pywal-discord -t default
+#wal-telegram --wal
+
+. $HOME/.config/mako/update-colors.sh &
+. $HOME/.config/cava/scripts/update-colors.sh &
+
+cp -r $HOME/.cache/wal/colors-waybar.css $HOME/.config/waybar &
+cp -r $HOME/.cache/wal/colors-wofi.css $HOME/.config/wofi &
+waybar
